@@ -20,10 +20,21 @@ public class JobRestController{
     {
         return service.getJobById(jobId);
     }
+    @PutMapping("/addJob")
+    public void updateJob(@RequestBody JobPost jobPost)
+    {
+        service.updateJob(jobPost);
+    }
  @GetMapping("/jobs")
  public List<JobPost> jobs()
  {
     return service.getAllJobs();
+ }
+ @DeleteMapping("/job/{jobId}")
+    public String deleteJob(@PathVariable int jobId)
+ {
+     service.deleteJob(jobId);
+     return "jobDeleted sucessfully";
  }
 
 }

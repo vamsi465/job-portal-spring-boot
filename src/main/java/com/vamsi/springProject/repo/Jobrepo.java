@@ -26,4 +26,27 @@ public class Jobrepo {
             }
             throw new JobNotFoundById("job not found by id"+id+"is not there");
         }
+
+    public void updateJob(JobPost jobPost) {
+        for(JobPost job:jobs)
+        {
+            if(job.getJobId()== jobPost.getJobId())
+            {
+                job.setJobTitle(jobPost.getJobTitle());
+                job.setJobId(jobPost.getJobId());
+                job.setCompany(jobPost.getCompany());
+                job.setLocation(jobPost.getLocation());
+            }
+        }
     }
+
+    public void deleteJob(int jobId) {
+        for(JobPost job:jobs)
+        {
+            if(job.getJobId()==jobId)
+            {
+                jobs.remove(job);
+            }
+        }
+    }
+}
