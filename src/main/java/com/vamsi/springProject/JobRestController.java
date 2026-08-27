@@ -2,6 +2,7 @@ package com.vamsi.springProject;
 
 import com.vamsi.springProject.model.JobPost;
 import com.vamsi.springProject.service.JobService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +13,7 @@ public class JobRestController{
     @Autowired
     private JobService service;
     @PostMapping("/addJob")
-        public JobPost addJob(@RequestBody JobPost job){
+        public JobPost addJob(@Valid @RequestBody JobPost job){
         return service.add(job);
         }
     @GetMapping("/jobs/{jobId}")
@@ -21,7 +22,7 @@ public class JobRestController{
         return service.getJobById(jobId);
     }
     @PutMapping("/addJob")
-    public void updateJob(@RequestBody JobPost jobPost)
+    public void updateJob(@Valid @RequestBody JobPost jobPost)
     {
         service.updateJob(jobPost);
     }
