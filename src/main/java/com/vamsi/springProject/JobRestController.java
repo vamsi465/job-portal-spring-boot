@@ -32,9 +32,9 @@ public class JobRestController{
     return service.getAllJobs();
  }
  @DeleteMapping("/job/{jobId}")
-    public String deleteJob(@PathVariable int jobId)
+    public String deleteJob(@PathVariable JobPost jobPost)
  {
-     service.deleteJob(jobId);
+     service.deleteJob(jobPost);
      return "jobDeleted sucessfully";
  }
 
