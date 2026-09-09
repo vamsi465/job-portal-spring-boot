@@ -32,4 +32,8 @@ public class JobService {
     public void deleteJob(JobPost jobId) {
         repo.delete(jobId);
     }
+
+    public List<JobPost> jobByCompany(String company) {
+        return repo.findByCompany(company);
+    }
 }
