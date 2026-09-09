@@ -37,9 +37,9 @@ public class JobRestController{
      service.deleteJob(jobPost);
      return "jobDeleted sucessfully";
  }
- @GetMapping("/jobs/company/{company}")
-    public List<JobPost> jobByCompany(@PathVariable String company) {
-        return service.jobByCompany(company);
+ @GetMapping("/jobs/location/{location}")
+    public List<JobPost> jobByCompany(@PathVariable String location) {
+        return service.jobsByLocation(location);
  }
 
 }

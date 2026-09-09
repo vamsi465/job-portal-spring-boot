@@ -33,7 +33,7 @@ public class JobService {
         repo.delete(jobId);
     }
 
-    public List<JobPost> jobByCompany(String company) {
-        return repo.findByCompany(company);
+    public List<JobPost> jobsByLocation(String location) {
+        return repo.findAllUsingLocation(location);
     }
 }
